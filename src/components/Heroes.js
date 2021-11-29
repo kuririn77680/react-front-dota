@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Card from './Card';
 
 const Heroes = () => {
   const [data, setData] = useState([]);
@@ -18,7 +19,7 @@ const Heroes = () => {
     <div className="heroes">
       <ul className="heroes-list">
         {data.map((hero)=>(
-          <li>{hero.localized_name}</li>
+          <Card hero={hero} key={hero.id}/>
         ))}
       </ul>
     </div>
